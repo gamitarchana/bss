@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+  <div class="login-form-container">
+    <div class="form login-form">
+      <!--h3 class='form-heading center-align'>LOGIN</h3-->
+      <form method="POST">
+        {% csrf_token %}
+          <div>
+            <label for="id_hoursperday">Hours per day</label>
+            <!--input type="text" name="hoursperday" required="" id="id_hoursperday"-->
+            <select name="hoursperday" required="" id="id_hoursperday">
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+          <!--div>
+            <label for="id_durationindays">Duration (in days)</label>
+            <select name="durationindays" required="" id="id_durationindays">
+              <option value="30">30</option>
+              <option value="60">90</option>
+              <option value="180">180</option>
+            </select>
+          </div-->
+          <div>
+            <label for="id_numberofchildren">Number of children</label>
+            <select name="numberofchildren" required="" id="id_numberofchildren">
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+          </div>
+          <div style="display:block">
+            <h5>Location Preference</h5>
+            <!---label for="id_city1">City:</label>
+            <select name="city1" required="" id="id_city1" onchange="onCityChange(this)">
+              <option disabled selected value> -- select an option -- </option>
+              {% for city in cities %}
+                <option value="{{city.city}}">{{city.city}}</option>
+              {% endfor %}
+            </select>
+            <label for="id_locality1">Locality:</label>
+            <select name="locality1" required="" id="id_locality1">
+            </select-->
+            <div>
+              <label for="id_location1">Location 1:</label>
+              <select name="location1" required="" id="id_location1" >
+                <option disabled selected value> -- select an option -- </option>
+                {% for service_area in service_areas %}
+                  <option value="{{service_area.id}}">{{service_area}}</option>
+                  {% endfor %}
+                </select>
+            </div>
+            <div>
+              <label for="id_location2">Location 2:</label>
+              <select name="location2" required="" id="id_location2" >
+                <option disabled selected value> -- select an option -- </option>
+                {% for service_area in service_areas %}
+                  <option value="{{service_area.id}}">{{service_area}}</option>
+                  {% endfor %}
+                </select>
+            </div>
+            <div>
+              <label for="id_location3">Location 3:</label>
+              <select name="location3" required="" id="id_location3" >
+                <option disabled selected value> -- select an option -- </option>
+                {% for service_area in service_areas %}
+                  <option value="{{service_area.id}}">{{service_area}}</option>
+                  {% endfor %}
+                </select>
+            </div>
+          </div>
+          <input class="submit-btn" type="submit" id="id_submit" value="Submit"/>
+      </form>
+  </div>
+</div>
+<script type="text/javascript">
+  function onCityChange(element){
+    const cityElement = element;//e.currentTarget;
+    const city = cityElement.value;
+    console.log(city);
+    localites="/service_area/"+city;
+    console.log(localites);
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        //document.getElementById("demo").innerHTML = this.responseText;
+        console.log(this.responseText)
+      }
+    };
+    xhttp.open("GET", "/service_area/"+city, true);
+    xhttp.send();
+  }
+
+</script>
+{% endblock %}

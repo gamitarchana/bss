@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}Service Packages{% endblock %}
+
+{% block content %}
+<div class="signup-form-container">
+  <div class="form services-form">
+  <!--h4>Please provide the information below</h4-->
+<form action="" method="post">
+  {% csrf_token %}
+  <!--div>
+    <label for="id_service">Service Package</label> <input type="text" value="{{service.name}}" id="id_service" name="service" disabled>
+  </div>
+  <div>
+    <label for="location_id">Location</label>
+    <input type="text" id="location_id" name="location" disabled value="{{location}}" >
+  </div-->
+  <!--div class="" style="width:600px; margin:40px auto;"><h4>Baby</h4>
+    {% for specific_service in specific_services.all %}
+      <input type="radio" name="specific_service" id="specific_service-{{specific_service.id}}" value="{{specific_service.id}}" required>
+      <label for="specific_service-{{specific_service.id}}">{{specific_service.name}}</label>
+    {% endfor %}
+  </div-->
+  <div style="display:block">
+    <h4>Quotations</h4>
+      <div style="display:block">Basic Charges  -  {{basic_charges}}</div>
+      {% if specific_charges > 0 %}
+        <div style="display:block">{{specific_service}} Charges  -  {{specific_charges}}</div>
+      {% endif %}
+      {% if night_charges > 0 %}
+        <div style="display:block">Night Charges  -  {{night_charges}}</div>
+      {% endif %}
+      <div>-------------------------------</div>
+      <div>Total Charges = {{total_charges}}</div>
+  </div>
+  <!--div>
+    <label for="id_location">Location</label>
+    <select name="location" required id="id_location" >
+      <option disabled selected value> -- select an option -- </option>
+      {% for service_area in service_areas %}
+        <option value="{{service_area.id}}">{{service_area}}</option>
+        {% endfor %}
+      </select>
+  </div-->
+  <!--div style="display:block">
+    <h4>Child 1:</h4>
+    <div>
+      <label for="id_firstname1">First Name</label> <input type="text" name="firstname1" maxlength="150" required="" id="id_firstname1">
+    </div>
+    <div>
+      <label for="id_lastname1">Last Name</label> <input type="text" name="lastname1" maxlength="150" required="" id="id_lastname1">
+    </div>
+    <div><label>Gender</label>
+        <input type="radio" name="gender1" id="female_id1" value="1">
+        <label for="female_id1">Female</label>
+        <input type="radio" name="gender1" id="male_id1" value="1">
+        <label for="male_id1">Male</label>
+    </div>
+    <div>
+      <label for="id_dateofbirth1">Date of birth</label> <input type="date" name="dateofbirth1" required="" id="id_dateofbirth1">
+    </div>
+  </div>
+  <div style="display:block">
+    <h4>Child 2:</h4>
+    <div>
+      <label for="id_firstname2">First Name</label> <input type="text" name="firstname2" maxlength="150" required="" id="id_firstname2">
+    </div>
+    <div>
+      <label for="id_lastname2">Last Name</label> <input type="text" name="lastname2" maxlength="150" required="" id="id_lastname2">
+    </div>
+    <div><label>Gender</label>
+        <input type="radio" name="gender2" id="female_id2" value="1">
+        <label for="female_id2">Female</label>
+        <input type="radio" name="gender2" id="male_id2" value="1">
+        <label for="male_id2">Male</label>
+    </div>
+    <div>
+      <label for="id_dateofbirth2">Date of birth</label> <input type="date" name="dateofbirth2" required="" id="id_dateofbirth2">
+    </div>
+  </div-->
+  <input type="reset" class="submit-btn" value="Back" style="width:40%; margin-left:10px; display:inline-block"/>
+  <input type="submit" class="submit-btn" value="Submit" style="width:40%; margin-right:10px; display:inline-block"/>
+  <!--input type="reset" class="submit-btn" value="Cancel" style="width:40%; margin-left:10px; display:inline-block"/-->
+</form>
+</div>
+</div>
+{% endblock %}

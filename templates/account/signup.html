@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="signup-form-container">
+  <div class="form sign-up-form">
+    <h3 class="form-heading center-align">SIGN UP</h3>
+  <form method="POST">
+    {% csrf_token %}
+      <div>
+        <label for="id_username">Username</label> <input type="text" name="username" maxlength="150" required="" id="id_firstname">
+      </div>
+      {{form.username.errors}}
+        <!--p class="helptext">Required.150 characters or fewer. Letters, digits and @/./+/-/_ only.</p-->
+      <div>
+        <label for="id_email">Email Address</label> <input type="email" name="email" required="" id="id_email">
+      </div>
+      {{form.email.errors}}
+      <div>
+        <label for="id_password">Password</label> <input type="password" name="password" required="" id="id_password">
+      </div>
+      <div>
+        <label for="id_password2">Confirm Password</label> <input type="password" name="password2" required="" id="id_password2">
+      </div>
+        {{form.password.errors}}
+        <div>
+          <label for="id_jobseeker">Job-seeker?</label> <input type="checkbox" name="is_jobseeker" id="id_jobseeker">
+        </div>
+        {{ form.non_field_errors }}
+      <div>
+        <input class="submit-btn" type="submit" id="id_submit" value="Sign Up"/>
+      </div>
+  </form>
+</div>
+</div>
+{% endblock %}

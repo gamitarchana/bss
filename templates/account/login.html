@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+  <div class="login-form-container">
+    <div class="form login-form">
+      <h3 class='form-heading center-align'>LOGIN</h3>
+      <form method="POST">
+        {% csrf_token %}
+          <div>
+          <label for="id_username">Username</label>
+          <input type="text" name="username" required="" id="id_username">
+        </div>
+        <div>
+          <label for="id_password">Password</label>
+          <input type="password" name="password" required="" id="id_password">
+        </div>
+              {{ form.non_field_errors }}
+        <div>
+          <input class="submit-btn" type="submit" id="id_submit" value="Login"/>
+        </div>
+        <p>New User? Sign up <a href="/signup/">here</a></p><br>
+        <p><a href="/password_change/">Forgot Password?</a></p>
+      </form>
+  </div>
+</div>
+{% endblock %}

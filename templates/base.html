@@ -1,0 +1,22 @@
+{% load i18n static %}
+{% load static %}<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    {% block extrastyle %}{% endblock %}
+    {% block extrahead %}{% endblock %}
+    {% block responsive %}
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    {% endblock %}
+    {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE">{% endblock %}
+  </head>
+  {% load i18n %}
+  <body>
+    <div class="main-content">
+    {% include 'common/header.html' %}
+    {% block content %}{% endblock %}
+    {% include 'common/footer.html' %}
+  </div>
+  </body>
+</html>

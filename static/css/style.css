@@ -1,0 +1,279 @@
+html, body{
+  margin:0px;
+  padding:0px;
+}
+
+body{
+  background-color: #fbf9f9;
+  color: #373b48;
+  font-family: 'Open Sans', Arial, sans-serif !important;
+  font-size: 18px !important;
+  /*position: relative;
+  min-height: 100vh;*/
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul {
+    padding: 0;
+    margin: 0;
+  /*  font-weight: 400;*/
+}
+
+a{
+  text-decoration: none;
+}
+button:focus{
+  outline:none;
+}
+.upper{
+  text-transform: uppercase;
+}
+.bold-18{
+  font-size: 18px;
+  font-weight: bold;
+}
+.right-align{
+  text-align:right;
+}
+.center-align{
+  text-align:center;
+}
+.bold{
+  font-weight: bold;
+}
+
+.width-100percent{
+  width:100%;
+}
+.width-50percent{
+  width:50%;
+}
+.height-100percent{
+  height:100%;
+}
+
+.top-margin-100{
+  margin-top: 100px;
+}
+
+.main-content{
+  position: relative;
+  min-height: 100vh;
+  padding-bottom:40px;
+  box-sizing: border-box;
+}
+
+.navigationbar{
+  width:100%;
+  background-color: #09396b;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 60px;
+  padding: 20px;
+}
+.navigationbar a:not(:first-child){
+  float: right;
+  /*color: #bbb7b7;*/
+  text-align: center;
+  /*padding: 12px;*/
+  /*line-height: 25px;*/
+  /*border-radius: 4px;*/
+  /*font-weight: bold;*/
+  padding: 0px 20px;
+  color:white;
+}
+
+.navigationbar .menu-icon{
+  display:none;
+  color:white;
+}
+.navigationbar a{
+  /*text-decoration:none;*/
+  /*margin:10px;*/
+}
+
+.navigationbar .logo {
+    width: 150px;
+    /*margin-left: 20px;
+    margin-top: 7px;*/
+}
+
+.menuitem a:hover:not(.active) {
+color: white;
+}
+a.menuitem:hover {
+    color: white;
+    /*text-decoration: none;*/
+}
+
+.menuitem active {
+color: white;
+}
+
+a.menuitem {
+    display: block;
+    color: #bbb7b7;
+    text-align: center;
+    padding: 5px 16px;
+    /*text-decoration: none;*/
+    font-size: 18px;
+}
+
+
+footer{
+  width:100%;
+  background-color: #040925;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  color:#fff;
+  position: absolute;
+  right:0;
+  bottom: 0;
+  left:0;
+
+}
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+footer ul a {
+  /*text-decoration: none;*/
+  float: right;
+  text-align: center;
+  color:#fff;
+  font-size: 14px;
+  padding:0px 20px;
+}
+.copyright{
+  font-size:12px;
+}
+
+.login-form-container , .signup-form-container, .reset-password-container{
+  /*margin:100px auto;*/
+  margin-top:70px;
+  padding-bottom: 70px;
+
+}
+
+.form{
+  margin: 0px auto;
+  padding: 50px;
+  background-color: white;
+  border-radius: 5px;
+    /* border: 1px solid gray; */
+  box-shadow: 4px 4px #e6e5e5a3;
+}
+.login-form{
+  width: 350px;
+}
+
+.sign-up-form, .forgot-password-form{
+  width:450px;
+}
+.forgot-reset-form{
+  width:600px;
+}
+
+.form-heading {
+  border-bottom: 1px solid #a29e9e;
+  padding-bottom:5px;
+}
+.form div{
+  margin:40px 0px;
+  display:flex;
+  align-items: center;
+}
+
+.form label{
+  display: inline-block;
+  width: 140px;
+}
+
+.sign-up-form label{
+  width: 270px;
+}
+.forgot-reset-form label{
+  width: 180px;
+}
+
+.services-form{
+  width:600px;
+}
+.service-packages-form{
+  width:80%;
+}
+
+.form div input[type=text], input[type=email], input[type=password]{
+  width:100%;
+  flex-grow: 1;
+  background-color: #e8f0fe !important;
+  border:none !important;
+  padding: 10px;
+}
+.form div input[type=checkbox]{
+  width:20px;
+  height:20px;
+}
+
+.form div input[type=text]:disabled {
+  background-color: #f9f8db !important;
+}
+.form .submit-btn{
+  width: 100%;
+    border: none;
+    background-color: #123b42 !important;
+    padding: 15px;
+    box-sizing: border-box;
+    color: white;
+    font-size: 18px;
+}
+
+.errorlist li{
+  display:inline-block;
+  font-size:14px;
+  font-weight: bold;
+  color:#ca1313;
+}
+
+.password-reset-instruction{
+  padding:40px 20px;
+}
+
+.services-radio input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.services-radio label {
+    display: inline-block;
+    background-color: #fff;/*#eff1f5;*/
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #7aabb3;/*#123b42;*/
+    border-radius: 4px;
+    margin:0px 10px;
+}
+
+.services-radio input[type="radio"]:checked + label {
+  /*  background-color:#bfb;
+    border-color: #4c4;*/
+    background-color:#eff1f5;
+    border-color: #7aabb3;
+}
+
+.services-radio input[type="radio"]:focus + label {
+    border-color: #444;
+}
+
+.services-radio label:hover {
+  background-color: #dfd;
+}
