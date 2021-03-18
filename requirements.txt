@@ -1,4 +1,4 @@
-django==3.0
+django==3.1.6
 django_reverse_admin
 django-phonenumber-field
 phonenumbers
